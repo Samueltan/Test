@@ -11,10 +11,10 @@ package dao.generated.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Author extends org.jooq.impl.TableImpl<dao.generated.tables.records.AuthorRecord> {
 
-	private static final long serialVersionUID = 1119701674;
+	private static final long serialVersionUID = 1536848325;
 
 	/**
-	 * The singleton instance of <code>library.author</code>
+	 * The singleton instance of <code>author</code>
 	 */
 	public static final dao.generated.tables.Author AUTHOR = new dao.generated.tables.Author();
 
@@ -27,29 +27,29 @@ public class Author extends org.jooq.impl.TableImpl<dao.generated.tables.records
 	}
 
 	/**
-	 * The column <code>library.author.id</code>.
+	 * The column <code>author.id</code>.
 	 */
 	public final org.jooq.TableField<dao.generated.tables.records.AuthorRecord, java.lang.Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
 	/**
-	 * The column <code>library.author.first_name</code>.
+	 * The column <code>author.first_name</code>.
 	 */
-	public final org.jooq.TableField<dao.generated.tables.records.AuthorRecord, java.lang.String> FIRST_NAME = createField("first_name", org.jooq.impl.SQLDataType.VARCHAR.length(255), this, "");
+	public final org.jooq.TableField<dao.generated.tables.records.AuthorRecord, java.lang.String> FIRST_NAME = createField("first_name", org.jooq.impl.SQLDataType.VARCHAR.length(255).defaulted(true), this, "");
 
 	/**
-	 * The column <code>library.author.last_name</code>.
+	 * The column <code>author.last_name</code>.
 	 */
-	public final org.jooq.TableField<dao.generated.tables.records.AuthorRecord, java.lang.String> LAST_NAME = createField("last_name", org.jooq.impl.SQLDataType.VARCHAR.length(255), this, "");
+	public final org.jooq.TableField<dao.generated.tables.records.AuthorRecord, java.lang.String> LAST_NAME = createField("last_name", org.jooq.impl.SQLDataType.VARCHAR.length(255).defaulted(true), this, "");
 
 	/**
-	 * Create a <code>library.author</code> table reference
+	 * Create a <code>author</code> table reference
 	 */
 	public Author() {
 		this("author", null);
 	}
 
 	/**
-	 * Create an aliased <code>library.author</code> table reference
+	 * Create an aliased <code>author</code> table reference
 	 */
 	public Author(java.lang.String alias) {
 		this(alias, dao.generated.tables.Author.AUTHOR);
@@ -60,7 +60,7 @@ public class Author extends org.jooq.impl.TableImpl<dao.generated.tables.records
 	}
 
 	private Author(java.lang.String alias, org.jooq.Table<dao.generated.tables.records.AuthorRecord> aliased, org.jooq.Field<?>[] parameters) {
-		super(alias, dao.generated.Library.LIBRARY, aliased, parameters, "");
+		super(alias, dao.generated.DefaultSchema.DEFAULT_SCHEMA, aliased, parameters, "");
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class Author extends org.jooq.impl.TableImpl<dao.generated.tables.records
 	 */
 	@Override
 	public org.jooq.UniqueKey<dao.generated.tables.records.AuthorRecord> getPrimaryKey() {
-		return dao.generated.Keys.KEY_AUTHOR_PRIMARY;
+		return dao.generated.Keys.PK_AUTHOR;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class Author extends org.jooq.impl.TableImpl<dao.generated.tables.records
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<dao.generated.tables.records.AuthorRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<dao.generated.tables.records.AuthorRecord>>asList(dao.generated.Keys.KEY_AUTHOR_PRIMARY);
+		return java.util.Arrays.<org.jooq.UniqueKey<dao.generated.tables.records.AuthorRecord>>asList(dao.generated.Keys.PK_AUTHOR);
 	}
 
 	/**

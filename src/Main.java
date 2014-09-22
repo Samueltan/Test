@@ -14,15 +14,21 @@ public class Main {
     public static void main(String[] args) {
         Connection conn = null;
 
-        String userName = "root";
-        String password = "root";
-        String url = "jdbc:mysql://localhost:3306/library";
+//        String userName = "root";
+//        String password = "root";
+//        String url = "jdbc:mysql://localhost:3306/library";
 
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            conn = DriverManager.getConnection(url, userName, password);
+//            // For Mysql
+//            Class.forName("com.mysql.jdbc.Driver").newInstance();
+//            conn = DriverManager.getConnection(url, userName, password);
             
-            DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
+            // For Sqlite
+            Class.forName("org.sqlite.JDBC").newInstance();
+            conn = DriverManager.getConnection("jdbc:sqlite:library.db");
+            
+//            DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
+            DSLContext create = DSL.using(conn, SQLDialect.SQLITE);
             Result<Record> result = create.select().from(AUTHOR).fetch();
             
             System.out.println("Read from db:");
