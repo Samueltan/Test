@@ -1,0 +1,12 @@
+package io;
+
+public class TestObjectIO {
+
+}
+
+class T implements Serializable{
+	int i = 10;
+	int j = 9;
+	double d = 2.3;
+	int k = 15;
+}

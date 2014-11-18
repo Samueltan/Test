@@ -1,0 +1,29 @@
+package io;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class TestObjectIO {
+	public static void main(String[] args){
+		T t = new T();
+		t.k = 8;
+		
+		try {
+			FileOutputStream fos = new FileOutputStream("object.dat");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+class T implements Serializable{
+	int i = 10;
+	int j = 9;
+	double d = 2.3;
+	int k = 15;
+}

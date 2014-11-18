@@ -1,0 +1,12 @@
+package io;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class TestPrintStream {
+	public static void main(String[] args){
+		String s = null;
+		BufferedReader br = new BufferedReader(
+				new InputStreamReader(System.in));
+	}
+}
