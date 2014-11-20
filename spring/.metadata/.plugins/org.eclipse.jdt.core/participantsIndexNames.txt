@@ -1,3 +1,0 @@
-INDEX VERSION 1.127
-D:\Users\Samuel\Documents\GitHub\Test\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4156271539.index
-\springapp\src
