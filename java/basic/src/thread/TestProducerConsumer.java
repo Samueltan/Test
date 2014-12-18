@@ -31,7 +31,7 @@ class SyncStack{
 	Bread[] arrBread = new Bread[volumn];
 	
 	public synchronized void push(Bread bread){
-		if(index == arrBread.length){
+		while(index == arrBread.length){
 			try {
 				this.wait();
 			} catch (InterruptedException e) {
@@ -46,7 +46,7 @@ class SyncStack{
 	}
 	
 	public synchronized Bread pop(){
-		if(index == 0){
+		while(index == 0){
 			try {
 				this.wait();
 			} catch (InterruptedException e) {
@@ -71,7 +71,13 @@ class Producer implements Runnable{
 		for(int i=0; i<20; i++){
 			Bread bread = new Bread(i);
 			ss.push(bread);
-			System.out.println("Produce: " + bread);
+			System.out.println("+++++: " + bread);
+			try {
+				Thread.sleep((int)(Math.random() * 10));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }
@@ -85,7 +91,15 @@ class Consumer implements Runnable{
 	public void run(){
 		for(int i=0; i<20; i++){
 			Bread bread = ss.pop();
-			System.out.println("Consume: " + bread);
+			System.out.println("-----: " + bread);
+			try {
+				Thread.sleep((int)(Math.random() * 1000));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+
+//		for(i==20)
 	}
 }
